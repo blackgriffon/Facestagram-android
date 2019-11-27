@@ -2,12 +2,11 @@ package com.example.facestagramandroid.network
 
 import org.json.JSONObject
 
-class PlaceRequest : EntityRequestCallback() {
+class PostRequest : EntityRequestCallback() {
     override val entityUrl: String
-        get() = "place"
+        get() = "post"
 
     override fun getEntityId(entity: JSONObject): Int {
-        return entity.getInt("placeId")
+        return entity.getInt("postId")
     }
-
 }

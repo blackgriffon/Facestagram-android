@@ -1,11 +1,13 @@
 package com.example.facestagramandroid.network
 
-class UserRequest : EntityRequestCallback() {
-    override var entityUrl: String = ""
-        get() = "user/$field"
+import org.json.JSONObject
 
-    fun getByPk(id: Int, response: OnEntityResponse) {
-        entityUrl = "$id"
-        fetch(response)
+class UserRequest : EntityRequestCallback() {
+    override val entityUrl: String
+        get() = "user"
+
+    override fun getEntityId(entity: JSONObject): Int {
+        return entity.getInt("userId")
     }
+
 }

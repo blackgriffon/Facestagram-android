@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import com.example.facestagramandroid.network.EntityRequest
 import com.example.facestagramandroid.network.OnEntityResponse
+import org.json.JSONArray
 import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
@@ -17,17 +18,34 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun buttonClick(view: View) {
-        println("testId: $testId")
-        EntityRequest.user.getByPk(testId, object: OnEntityResponse {
+        val testObject = JSONObject()
+        testObject.put("userId", 1)
+        testObject.put("email", "android@gmail.com")
+        testObject.put("password", "1234")
+        testObject.put("name", "안드로이드")
+        testObject.put("profileImage", null)
+
+        EntityRequest.user.get(1, object : OnEntityResponse {
             override fun error() {
                 println("Error")
             }
 
-            override fun success(json: JSONObject) {
-                println(json)
-                testId++
+            override fun success(contents: String?) {
+                println(JSONObject(contents))
             }
         })
+
+        /*
+        EntityRequest.user.update(testObject, object : OnEntityResponse {
+            override fun error() {
+                println("Error")
+            }
+
+            override fun success(contents: String?) {
+                println("Success")
+            }
+        })
+        */
     }
 
 }
