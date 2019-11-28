@@ -26,7 +26,7 @@ class CalendarActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu, menu)
+        menuInflater.inflate(R.menu.calendar_menu, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -37,14 +37,10 @@ class CalendarActivity : AppCompatActivity() {
             val intent = Intent(this, PostListActivity::class.java)
             startActivity(intent)
             true
-        } android.R.id.home -> {
+        } else -> {
             Toast.makeText(this, "Go Back action", Toast.LENGTH_LONG).show()
             onBackPressed()
             true
-        } else -> {
-            //If we got here, the user's action was not recognized
-            //Invoke the superclass to handle it
-            super.onOptionsItemSelected(item)
         }
 
     }
