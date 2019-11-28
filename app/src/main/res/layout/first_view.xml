@@ -22,24 +22,37 @@
         app:layout_constraintVertical_bias="0.444" />
 
     <Button
+        android:id="@+id/next_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/next"
+        app:layout_constraintBottom_toTopOf="@+id/testButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
         android:id="@+id/testButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:onClick="buttonClick"
         android:text="@string/test"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView3"
         android:layout_width="180dp"
         android:layout_height="77dp"
-        android:layout_marginBottom="72dp"
+        android:layout_marginBottom="80dp"
         android:text="@string/textview"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
