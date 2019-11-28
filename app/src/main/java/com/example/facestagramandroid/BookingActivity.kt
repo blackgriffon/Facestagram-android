@@ -3,6 +3,7 @@ package com.example.facestagramandroid
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -22,12 +23,11 @@ class BookingActivity : AppCompatActivity() {
         supportActionBar?.setTitle("Booking")
 
 
-        regist_button.setOnClickListener {
+        newPostRegist_button.setOnClickListener {
             Toast.makeText(this, "New Input", Toast.LENGTH_LONG).show()
 
         }
 
-        spinner.prompt = "Place Category"
         val items = resources.getStringArray(R.array.category_array)
         val spinnerAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, items)
 
@@ -35,15 +35,10 @@ class BookingActivity : AppCompatActivity() {
 
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                Log.d("MyTag","onNothingSelected")
             }
 
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 when(position) {
                     0 -> {
 
@@ -55,6 +50,8 @@ class BookingActivity : AppCompatActivity() {
                 }
             }
         }
+
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
