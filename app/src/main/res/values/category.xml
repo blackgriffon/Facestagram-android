@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="category_array">
+        <item> 음식점 </item>
+        <item> 카페 </item>
+        <item> 대중교통 </item>
+        <item> PC방 </item>
+        <item> 영화관 </item>
+        <item> 코인노래방 </item>
+        <item> 노래방 </item>
+        <item> 볼링장 </item>
+        <item> 당구장 </item>
+        <item> 편의점 </item>
+        <item> 마트 </item>
+        <item> 호텔 </item>
+    </string-array>
+</resources>

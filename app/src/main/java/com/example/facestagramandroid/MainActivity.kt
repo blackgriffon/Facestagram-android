@@ -41,6 +41,8 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        test_textView.setText("${testObject}")
+
         /*
         EntityRequest.user.update(testObject, object : OnEntityResponse {
             override fun error() {
@@ -53,5 +55,4 @@ class MainActivity : AppCompatActivity() {
         })
         */
     }
-
 }
