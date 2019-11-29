@@ -9,6 +9,11 @@ import com.example.facestagramandroid.network.OnEntityResponse
 import kotlinx.android.synthetic.main.first_view.*
 import org.json.JSONObject
 
+
+
+
+
+
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

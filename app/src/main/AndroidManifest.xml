@@ -15,15 +15,21 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".BookingActivity"></activity>
-        <activity android:name=".PostListActivity" />
-        <activity android:name=".NewPostActivity" />
-        <activity android:name=".CalendarActivity" />
-        <activity android:name=".PlaceListActicvity"/>
-        <activity android:name=".MainActivity">
+        <activity android:name=".PostRecyclerActivity" >
+
+        </activity>
+        <activity android:name=".PostListActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".NewPostActivity" />
+        <activity android:name=".CalendarActivity" />
+        <activity android:name=".PlaceListActicvity">
+        </activity>
+        <activity android:name=".MainActivity">
+
         </activity>
 
         <meta-data

@@ -1,28 +1,37 @@
 package com.example.facestagramandroid
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.ImageView
 import android.widget.ListView
 import com.example.facestagramandroid.network.EntityRequest
 import com.example.facestagramandroid.network.OnEntityResponse
 import org.json.JSONArray
 import org.json.JSONObject
 import android.widget.TextView
+import com.example.facestagramandroid.data.postlist.PostListViewItem
 import kotlinx.android.synthetic.main.activity_place_list_acticvity.*
+import java.util.ArrayList
 import kotlin.random.Random
 
 class MyAdapter : BaseAdapter() {
+
+
     var items = emptyArray<JSONObject>()
         set(value) {
             field = value
             notifyDataSetChanged()
         }
 
+
+    private var listViewItemList = ArrayList<PostListViewItem>()
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+
         var view: View? = convertView
         if (view == null) {
             view = LayoutInflater
@@ -38,6 +47,7 @@ class MyAdapter : BaseAdapter() {
         holder.textView1?.text = item.toString()
 
         return view!!
+
     }
 
     override fun getItem(position: Int): Any {
