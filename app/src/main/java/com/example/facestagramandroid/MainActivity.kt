@@ -36,6 +36,10 @@ class MainActivity : AppCompatActivity() {
         testObject.put("name", "안드로이드")
         testObject.put("profileImage", null)
 
+        val userId = testObject.getInt("userId")
+        val email = testObject.getString("email")
+        val name = testObject.getString("name")
+
         EntityRequest.user.get(1, object : OnEntityResponse {
             override fun error() {
                 println("Error")
@@ -45,8 +49,8 @@ class MainActivity : AppCompatActivity() {
                 println(JSONObject(contents))
             }
         })
-
-        test_textView.setText("${testObject}")
+        println("userId : ${userId} username : ${name} email : ${email}")
+        test_textView.setText("userId : ${userId} username : ${name} email : ${email}")
 
         /*
         EntityRequest.user.update(testObject, object : OnEntityResponse {
