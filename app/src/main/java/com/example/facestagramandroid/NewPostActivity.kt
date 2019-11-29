@@ -4,20 +4,14 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import androidx.core.view.get
 import com.example.facestagramandroid.network.EntityRequest
-import com.example.facestagramandroid.network.EntityRequestCallback
 import com.example.facestagramandroid.network.OnEntityResponse
 import kotlinx.android.synthetic.main.activity_new_post.*
-import org.json.JSONArray
 import org.json.JSONObject
-import java.time.LocalDateTime
 
 class NewPostActivity : AppCompatActivity() {
 
@@ -36,7 +30,7 @@ class NewPostActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        newPostRegist_button.setOnClickListener {
+        bookingRegist_button.setOnClickListener {
             val json = JSONObject()
 
             json.put("postId", "0")
@@ -47,7 +41,6 @@ class NewPostActivity : AppCompatActivity() {
             json.put("planEndDatetime", null)
             json.put("placeId", "1")
             json.put("accessibleLevelId", "1")
-            println(json)
 
             EntityRequest.post.insert(json, object : OnEntityResponse {
                 override fun error() {
